@@ -1,0 +1,23 @@
+<div>
+  <h2 *ngIf="showLogin">Login</h2>
+  <h2 *ngIf="!showLogin">Register</h2>
+
+  <form *ngIf="showLogin">
+      <input type="email" class="email" placeholder="Enter your email" required />
+      <input type="password" class="password" placeholder="Enter your password" required/>
+    <p class="forgot-pass"><a (click)="forgotpass()">Forgot Password?</a></p>
+      <button class="auth-btn" type="submit">Login</button>
+    <p class="switch-link">Don't have an account? <a (click)="toggleForm()">Register Now</a></p>
+  </form>
+
+  <form *ngIf="!showLogin">
+      <input type="text" class="username" placeholder="Create your username" required />
+      <input type="password" class="password" placeholder="Create your password" required/>
+      <input type="password" class="password" placeholder="Re-Enter your password" required/>
+      <input type="email" class="email" placeholder="Enter your email" required />
+      <button class="verify-email" type="button">Verify email</button>
+      <input class="otp" placeholder="Enter otp" required>
+      <button class="auth-btn" type="submit">Register</button>
+    <p class="switch-link">Already have an account? <a (click)="toggleForm()">Login here</a></p>
+  </form>
+</div>
